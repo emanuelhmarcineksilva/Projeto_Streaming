@@ -5,10 +5,10 @@ usuario = 'desativo'
 listaGeneros = [["ação"], ["aventura"], ["comédia"], ["drama"], ["ficção científica"], ["terror"], ["romance"], ["suspense"], ["fantasia"], ["musical"], ["documentário"], ["policial"]]
 
 # Criar as horas da lista
-for i in range(len(listaGeneros)): # esse menos um é para não contar o primerio
-    for j in range(len(listaGeneros)):
-        horas = random.randint(0, 5)
-        listaGeneros[i].append(horas) # esse mais um é para ele pular o primerio
+for i in range(len(listaGeneros)): # esse menos um é para não contar o primerio 
+    horas = random.randint(1, 6)
+    listaGeneros[i].append(horas) # esse mais um é para ele pular o primerio
+    
     
 # Perguntando dados
 login = input("Digite o seu nome: ")
@@ -53,8 +53,13 @@ while loop == True:
     # listaHorasFilme  # Ta ali em cima
 
     # FUNÇÃO DESCOBRIR GÊNERO PREFERIDO
-
-    # def generoFav():
+    def generoFav():
+        favgen = input("qual seu gênero de filmes favorito ?")
+        tem_numero = any(char.isdigit() for char in favgen)
+        print(tem_numero)
+        if favgen not in listaGeneros:
+            listaGeneros.append(favgen)
+        
 
     # FUNÇÃO CALCULAR TEMPO
 
