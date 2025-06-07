@@ -9,7 +9,6 @@ for i in range(len(listaGeneros)): # esse menos um é para não contar o primeri
     horas = random.randint(1, 6)
     listaGeneros[i].append(horas) # esse mais um é para ele pular o primerio
     
-    
 # Perguntando dados
 login = input("Digite o seu nome: ")
 
@@ -52,18 +51,27 @@ while loop == True:
     # Horas assistidas por mês
     # listaHorasFilme  # Ta ali em cima
 
-    # FUNÇÃO DESCOBRIR GÊNERO PREFERIDO
-    def generoFav():
-        favgen = input("qual seu gênero de filmes favorito ?")
-        tem_numero = any(char.isdigit() for char in favgen)
-        print(tem_numero)
-        if favgen not in listaGeneros:
-            listaGeneros.append(favgen)
-        
-
     # FUNÇÃO CALCULAR TEMPO
 
-    # def calcTempo(listaHorasMes):
+    horas_lista = []
+    def calcTempo():
+        for i in range(len(listaGeneros)):
+            horas_lista.append(listaGeneros[i][1])
+            print(horas_lista)
+
+    def generoFav():
+        
+        valores = []
+        for i in range(len(horas_lista)):
+            
+            valores.append(horas_lista[i])
+            if valores[i] == 6:
+                    valor_i = i
+                    maior_valor = valores[i]
+                    genero_favorito = listaGeneros[valor_i]
+                    print(genero_favorito)
+            
+
 
     # Mensagem de bem vindo e escolha da função
     print("Bem vindo ao nosso programa de streaming\n")
